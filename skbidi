@@ -1,0 +1,85 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class EnhancedHouseDrawing extends JPanel {
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        
+        // Draw the house body
+        g.setColor(Color.BLUE);
+        g.fillRect(100, 150, 200, 150);
+
+        // Draw the roof
+        g.setColor(Color.RED);
+        int[] xPoints = {70, 200, 330};
+        int[] yPoints = {150, 50, 150};
+        g.fillPolygon(xPoints, yPoints, 3);
+
+        // Draw the chimney
+        g.setColor(Color.DARK_GRAY);
+        g.fillRect(230, 80, 30, 60);
+        
+        // Draw the door
+        g.setColor(Color.BROWN);
+        g.fillRect(180, 230, 40, 70);
+
+        // Draw windows
+        g.setColor(Color.WHITE);
+        g.fillRect(120, 180, 50, 40);
+        g.fillRect(230, 180, 50, 40);
+        
+        // Draw window frames
+        g.setColor(Color.BLACK);
+        g.drawRect(120, 180, 50, 40);
+        g.drawRect(230, 180, 50, 40);
+        
+        // Draw door frame
+        g.drawRect(180, 230, 40, 70);
+        
+        // Draw sun
+        g.setColor(Color.YELLOW);
+        g.fillOval(20, 20, 80, 80);
+        
+        // Draw grass
+        g.setColor(Color.GREEN);
+        g.fillRect(0, 300, 400, 100);
+        
+        // Draw clouds
+        g.setColor(Color.LIGHT_GRAY);
+        g.fillOval(320, 20, 60, 30);
+        g.fillOval(350, 20, 60, 30);
+        g.fillOval(335, 10, 60, 30);
+
+        // Draw a tree
+        g.setColor(new Color(139, 69, 19)); // Brown color for trunk
+        g.fillRect(50, 220, 20, 40);
+        g.setColor(Color.GREEN); // Green color for leaves
+        g.fillOval(30, 180, 60, 60);
+        
+        // Draw a pathway
+        g.setColor(Color.GRAY);
+        g.fillRect(150, 300, 100, 20);
+        
+        // Draw flowers
+        g.setColor(Color.RED);
+        g.fillOval(70, 310, 10, 10);
+        g.fillOval(70, 320, 10, 10);
+        
+        g.setColor(Color.YELLOW);
+        g.fillOval(300, 310, 10, 10);
+        g.fillOval(300, 320, 10, 10);
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Enhanced House Drawing");
+        EnhancedHouseDrawing drawing = new EnhancedHouseDrawing();
+        
+        frame.add(drawing);
+        frame.setSize(400, 450);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
+skibidi
